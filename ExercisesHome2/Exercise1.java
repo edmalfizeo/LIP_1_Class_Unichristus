@@ -1,12 +1,10 @@
 package ExercisesHome2;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Exercise1 {
     public static double calculoImc(double peso, double altura) {
-        double imc = peso/Math.pow(altura, 2);
-        return imc;
+        return peso/Math.pow(altura, 2);
     }
     public static double pesoIdeal(String sex, double altura) {
         double pesoIdeal;
