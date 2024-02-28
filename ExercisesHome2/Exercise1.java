@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Exercise1 {
     public static double calculoImc(double peso, double altura) {
         return peso/Math.pow(altura, 2);
+        //teste
     }
     public static double pesoIdeal(String sex, double altura) {
         double pesoIdeal;
