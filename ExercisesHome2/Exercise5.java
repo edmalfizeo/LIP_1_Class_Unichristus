@@ -4,46 +4,47 @@ public class Exercise5 {
     //main
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int n1, n2;
+        int quantLinhas, quantColunas;
 
         System.out.println("Digite o primeiro numero de quanto sera a matriz: ");
-        n1 = input.nextInt();
+        quantLinhas = input.nextInt();
         input.nextLine();
 
         System.out.println("Digite o segundo numero de quanto sera a matriz: ");
-        n2 = input.nextInt();
+        quantColunas = input.nextInt();
         input.nextLine();
 
-        matriz(n1,n2);
+        matriz(quantLinhas,quantColunas);
     }
 
 
-    public static void matriz(int n1,int n2){
+    //Sub-Rotinas
+    public static void matriz(int quantLinhas,int quantColunas){
         //Variaveis
         Scanner input = new Scanner(System.in);
-        int[][] vetor = new int[n1][n2];
+        int[][] vetor = new int[quantLinhas][quantColunas];
         int soma = 0;
 
         //Criar e somar a matriz
-        for (int i = 0; i < n1; i++) {
-            for (int j = 0; j < n2; j++) {
-                System.out.printf("Digite o numero na posição (%d)(%d):",i,j);
+        for (int i = 0; i < quantLinhas; i++) {
+            for (int j = 0; j < quantColunas; j++) {
+                System.out.printf("Digite o numero na posição (%d)(%d):",i, j);
                 vetor[i][j] = input.nextInt();
-
-                if (vetor[i] == vetor[j]) {
-                    soma += vetor[i][j];
+                if(quantLinhas == quantColunas){
+                    if (i == j) {
+                        soma += vetor[i][j];
+                    }
                 }
             }
         }
 
         //Imprimir a matriz
-        for (int i = 0; i < n1; i++) {
+        for (int i = 0; i < quantLinhas; i++) {
             System.out.println();
-            for (int j = 0; j < n2; j++) {
-                System.out.printf("%d ",vetor[i][j]);
+            for (int j = 0; j < quantColunas; j++) {
+                System.out.printf("[%d] ",vetor[i][j]);
             }
         }
-
         System.out.println("\nA soma da diagonal é: " + soma);
     }
 }
