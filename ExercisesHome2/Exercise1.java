@@ -6,17 +6,19 @@ public class Exercise1 {
     public static double calculoImc(double peso, double altura) {
         return peso/Math.pow(altura, 2);
     }
+
     public static double pesoIdeal(String sex, double altura) {
         double pesoIdeal;
-        if(sex.equals("h")) {
+        if(sex.equals("M") || sex.equals("MASCULINO")) {
             pesoIdeal = (72.7 * altura) - 58;
             return pesoIdeal;
-        }else if (sex.equals("f")) {
+        }else if (sex.equals("F") || sex.equals("FEMININO")) {
             pesoIdeal = (62.1 * altura) - 44.7;
             return pesoIdeal;
         }
         return 0;
     }
+
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -26,6 +28,7 @@ public class Exercise1 {
 
         System.out.println("Digite seu sexo: ");
         sex = input.nextLine();
+        sex = sex.toUpperCase();
 
         System.out.println("Digite seu peso: ");
         peso = input.nextDouble();
