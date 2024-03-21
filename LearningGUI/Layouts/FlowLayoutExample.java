@@ -14,7 +14,7 @@ public class FlowLayoutExample {
         JLabel labelNome = new JLabel("Nome: ");
         JTextField fieldNome = new JTextField(20);
 
-        JLabel labelIdade = new JLabel("Idade: ");
+        JLabel labelIdade = new JLabel("Ano do nascimento: ");
         JTextField fieldIdade = new JTextField(20);
 
         JButton confirmar = new JButton("Confirmar Cadastro");
@@ -36,7 +36,7 @@ public class FlowLayoutExample {
         panelBotao.add(confirmar, BorderLayout.CENTER);
         panelBotao.add(resultado, BorderLayout.SOUTH);
 
-        confirmar.addActionListener(e -> resultado.setText(fieldNome.getText() + "Sua idade é: " + (calendar.get(Calendar.YEAR) - Integer.parseInt(fieldIdade.getText()))));
+        confirmar.addActionListener(e -> resultado.setText(fieldNome.getText() + " Sua idade é: " + (calendar.get(Calendar.YEAR) - Integer.parseInt(fieldIdade.getText()))));
 
         frame.setLayout(new FlowLayout());
         frame.add(panel);
